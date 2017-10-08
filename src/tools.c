@@ -1,0 +1,50 @@
+#include "libft.h"
+#include <stdlib.h>
+
+int			duplicate_new_line(char *line, char **free_that)
+{
+	char	*buff;
+
+	if ((buff = ft_strdup(line)) == NULL)
+		return (-1);
+	free(*free_that);
+	*free_that = buff;
+	return (0);
+}
+
+int			fill_nb(char *line, int nb_search)
+{
+	int		j;
+	char	cpy;
+	int		nb;
+
+	j = 0;
+	while (j != nb_search)
+	{
+		while (*line && !ft_isdigit(*line))
+			++line;
+		++j;
+		if (j == nb_search)
+			break ;
+		while (*line && ft_isdigit(*line))
+			++line;
+	}
+	j = 0;
+	while (line[j] && ft_isdigit(line[j]))
+		++j;
+	cpy = line[j];
+	line[j] = 0;
+	nb = ft_atoi(line);
+	line[j] = cpy;
+	return (nb);
+}
+
+int			skip_nbr(char *line)
+{
+	int		i;
+
+	i = 0;
+	while (line[i] && ft_isdigit(line[i]))
+		++i;
+	return (i + 1);
+}
