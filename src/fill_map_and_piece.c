@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fill_map_and_piece.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/09 15:44:40 by yguzman           #+#    #+#             */
+/*   Updated: 2017/10/09 15:45:57 by yguzman          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "filler.h"
 #include <stdlib.h>
@@ -31,7 +43,8 @@ int			push_line(char ***tab, char *line)
 	return (0);
 }
 
-int			malloc_map_or_piece(char ***tab, int line_x, int column_y, char *line)
+int			malloc_map_or_piece(char ***tab, int line_x,
+								int column_y, char *line)
 {
 	int		i;
 
@@ -53,9 +66,11 @@ int			malloc_map_or_piece(char ***tab, int line_x, int column_y, char *line)
 int			pars_and_fill_line(char **line, char ***map, char ***piece)
 {
 	if (ft_strncmp(*line , "Plateau", 7) == 0)
-		return (malloc_map_or_piece(map, fill_nb(*line, 1), fill_nb(*line, 2), *line));
+		return (malloc_map_or_piece(map, fill_nb(*line, 1),
+									fill_nb(*line, 2), *line));
 	else if (ft_strncmp(*line , "Piece", 5) == 0)
-		return (malloc_map_or_piece(piece, fill_nb(*line, 1), fill_nb(*line, 2), *line));
+		return (malloc_map_or_piece(piece, fill_nb(*line, 1),
+									fill_nb(*line, 2), *line));
 	else if ((*line)[0] == ' ')
 		free(*line);
 	else

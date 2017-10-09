@@ -6,7 +6,7 @@
 #    By: yguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 11:38:09 by yguzman           #+#    #+#              #
-#    Updated: 2017/10/02 15:31:58 by yguzman          ###   ########.fr        #
+#    Updated: 2017/10/09 15:34:08 by yguzman          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -18,6 +18,7 @@ DIR_SRC		=		./src/
 
 SRCS		=		$(DIR_SRC)main.c					\
 					$(DIR_SRC)free.c					\
+					$(DIR_SRC)go_algo.c					\
 					$(DIR_SRC)fill_map_and_piece.c		\
 					$(DIR_SRC)fill_player.c				\
 					$(DIR_SRC)tools.c					\
