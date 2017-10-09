@@ -34,8 +34,10 @@ int			loop_filler(int player)
 		if ((ret = fill_map_and_piece(&map, line, &piece)) == -1)
 				return (-1);
 		if (ret == 1)
+		{
 			go_algo(map, piece, player);
-		free_map_and_piece(map, piece);
+			free_map_and_piece(map, piece);
+		}
 	}
 	if (ret == -1)
 		return (-1);
