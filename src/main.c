@@ -6,7 +6,7 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 15:44:15 by yguzman           #+#    #+#             */
-/*   Updated: 2017/10/09 15:44:16 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/10/10 14:13:42 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,33 @@ void		disp_tab_fd(char **tab)
 }
 //Just for dip in file check;
 
+void		init_dm(t_dm *dm)
+{
+	dm->last_posme[0] = -1;
+	dm->last_posme[1] = -1;
+	dm->last_pos[0] = -1;
+	dm->last_pos[1] = -1;
+}
+
 int			loop_filler(int player)
 {
 	char	*line;
 	char	**piece;
 	char	**map;
 	int		ret;
+	t_dm	dm;
 
 	map = NULL;
 	line = NULL;
 	piece = NULL;
+	init_dm(&dm);
 	while ((ret = get_next_line(0, &line)) > 0)
 	{
 		if ((ret = fill_map_and_piece(&map, line, &piece)) == -1)
-				return (-1);
+			return (-1);
 		if (ret == 1)
 		{
-			go_algo(map, piece, player);
+			go_algo(map, piece, player, &dm);
 			free_map_and_piece(map, piece);
 		}
 	}

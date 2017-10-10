@@ -6,7 +6,7 @@
 #    By: yguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 11:38:09 by yguzman           #+#    #+#              #
-#    Updated: 2017/10/09 15:34:08 by yguzman          ###   ########.fr        #
+#    Updated: 2017/10/10 15:01:19 by yguzman          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -37,7 +37,7 @@ ECHO		=		printf
 all			:		$(NAME)
 
 $(NAME)		:		$(OBJS)
-					@make -C libft
+					make -C libft 
 					@$(ECHO) "\033[35m[~~~~COMPILATION PROJECT~~~~]\n\033[0m"
 					@$(CC) -o $(NAME) -Llibft -lft -lncurses $(OBJS) && $(ECHO) "\033[33;32m["$@"]\n\033[0m" || $(ECHO) "\033[31m["$@"]\n\033[0m"
 
@@ -64,8 +64,14 @@ fclean		:		fclean_lib
 re			:		fclean all
 
 depend		:		$(SRCS)
-					makedepend -- -Yinclude/ -- $^
+					@makedepend -- -Yinclude/ -- $^ 2> /dev/null
 
 .PHONY		:		all depend clean flean re
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
+
+src/main.o: include/libft.h include/filler.h
+src/go_algo.o: include/filler.h include/libft.h
+src/fill_map_and_piece.o: include/libft.h include/filler.h
+src/fill_player.o: include/libft.h include/filler.h
+src/tools.o: include/libft.h

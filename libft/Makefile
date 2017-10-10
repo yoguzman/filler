@@ -6,7 +6,7 @@
 #    By: yguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 11:38:09 by yguzman           #+#    #+#              #
-#    Updated: 2017/10/06 18:15:51 by yguzman          ###   ########.fr        #
+#    Updated: 2017/10/10 14:53:13 by yguzman          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -130,8 +130,44 @@ re			:		fclean all
 
 
 depend		:		$(SRCS) $(SRCS_LIB)
-					makedepend -- -Y../include/ -- $^
+					@makedepend -- -Y../include/ -- $^ 2> /dev/null
 
 .PHONY		:		all clean flean re
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
+
+ft_itoa_base.o: ../include/libft.h
+ft_itoa_base_u.o: ../include/libft.h
+ft_listpush_back_double.o: ../include/libft.h
+ft_lstadd_double.o: ../include/libft.h
+ft_reallocfake.o: ../include/libft.h
+get_next_line.o: ../include/libft.h
+free_elem_lst.o: ../include/libft.h
+ft_lstnew.o: ../include/libft.h
+ft_lstdelone.o: ../include/libft.h
+ft_lstdel_double.o: ../include/libft.h
+ft_lstdel.o: ../include/libft.h
+ft_strjoin.o: ../include/libft.h
+ft_lstadd.o: ../include/libft.h
+ft_strtrim.o: ../include/libft.h
+ft_getenv.o: ../include/libft.h
+ft_lstiter.o: ../include/libft.h
+ft_lstmap.o: ../include/libft.h
+ft_puterr.o: ../include/libft.h
+ft_putstr.o: ../include/libft.h
+ft_putstr_fd.o: ../include/libft.h
+ft_putendl_fd.o: ../include/libft.h
+ft_putnbr_fd.o: ../include/libft.h
+ft_putendl.o: ../include/libft.h
+ft_print_words_tables.o: ../include/libft.h
+ft_strmap.o: ../include/libft.h
+ft_strmapi.o: ../include/libft.h
+ft_strncat.o: ../include/libft.h
+ft_itoa.o: ../include/libft.h
+ft_strlcpy.o: ../include/libft.h
+ft_putnbr.o: ../include/libft.h
+ft_strcat.o: ../include/libft.h
+ft_putnbr_base.o: ../include/libft.h
+ft_strdup.o: ../include/libft.h
+ft_strlcat.o: ../include/libft.h
+ft_strsplit.o: ../include/libft.h

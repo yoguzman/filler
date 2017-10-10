@@ -6,7 +6,7 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 20:16:14 by yguzman           #+#    #+#             */
-/*   Updated: 2017/10/05 13:52:19 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/10/10 13:54:45 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 int					ft_tolower(int c);
 size_t				ft_strlen(const char *str);
+int					ft_tablen(char **str);
 int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 int					ft_strequ(const char *s1, const char *s2);
