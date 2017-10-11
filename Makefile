@@ -21,6 +21,11 @@ SRCS		=		$(DIR_SRC)main.c					\
 					$(DIR_SRC)go_algo.c					\
 					$(DIR_SRC)fill_map_and_piece.c		\
 					$(DIR_SRC)fill_player.c				\
+					$(DIR_SRC)brut_force.c				\
+					$(DIR_SRC)pos_func.c				\
+					$(DIR_SRC)stick_piece.c				\
+					$(DIR_SRC)rush.c					\
+					$(DIR_SRC)pos_near.c				\
 					$(DIR_SRC)tools.c					\
 
 OBJS		=		$(SRCS:.c=.o)
@@ -37,7 +42,7 @@ ECHO		=		printf
 all			:		$(NAME)
 
 $(NAME)		:		$(OBJS)
-					make -C libft 
+					@make -C libft 
 					@$(ECHO) "\033[35m[~~~~COMPILATION PROJECT~~~~]\n\033[0m"
 					@$(CC) -o $(NAME) -Llibft -lft -lncurses $(OBJS) && $(ECHO) "\033[33;32m["$@"]\n\033[0m" || $(ECHO) "\033[31m["$@"]\n\033[0m"
 

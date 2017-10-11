@@ -13,6 +13,19 @@
 #include "libft.h"
 #include <stdlib.h>
 
+int			push_line(char ***tab, char *line)
+{
+	int		i;
+
+	i = 0;
+	while ((*tab)[i] && (*tab)[i][0] != 0)
+		++i;
+   	(*tab)[i] = line;
+	if ((*tab)[i + 1] == NULL)
+		return (1);
+	return (0);
+}
+
 int			duplicate_new_line(char *line, char **free_that)
 {
 	char	*buff;

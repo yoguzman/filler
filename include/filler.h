@@ -19,16 +19,37 @@ void		disp_tab_fd(char **tab);
 
 typedef struct	s_data_map
 {
-	int			last_posme[2];
 	int			last_pos[2];
+	int			first_pos[2];
 }				t_dm;
 
+//Just for dip in file check;
+void		disp_all(char **tab, char **piece, t_dm *dm);
+//Just for dip in file check;
+
+void			init_dm(t_dm *dm);
+
 void			free_map_and_piece(char **map, char **piece);
+
 int				fill_map_and_piece(char ***map, char *line, char ***piece);
 int				fill_player(void);
+
+
+int				brut_force_all(char **map, char **piece, int player, t_dm *dm);
+int				rush(char **map, char **piece, int player, t_dm *dm);
 int				go_algo(char **map, char **piece, int player, t_dm *dm);
+
+void			put_pos(int pos[2], t_dm *dm);
+void			find_first_pos(char **map, t_dm *dm, int player);
+
+int				stick_piece_in_map(char **map, char **piece,
+									int pos[2], int player);
+
+int				find_pos_near(char **map, t_dm *dm, int player, int *pos);
+
+int				duplicate_new_line(char *line, char **free_that);
 int				skip_nbr(char *line);
 int				fill_nb(char *line, int nb_search);
-int				duplicate_new_line(char *line, char **free_that);
+int				push_line(char ***tab, char *line);
 
 #endif

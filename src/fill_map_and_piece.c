@@ -31,17 +31,6 @@ int			modif_line(char **line)
 	return (0);
 }
 
-int			push_line(char ***tab, char *line)
-{
-	int		i;
-
-	i = 0;
-	while ((*tab)[i] && (*tab)[i][0] != 0)
-		++i; (*tab)[i] = line;
-	if ((*tab)[i + 1] == NULL)
-		return (1);
-	return (0);
-}
 
 int			malloc_map_or_piece(char ***tab, int line_x,
 								int column_y, char *line)
@@ -78,9 +67,9 @@ int			pars_and_fill_line(char **line, char ***map, char ***piece)
 	return (0);
 }
 
-int			fill_map_and_piece(char ***map, char *line, char ***piece)
+int				fill_map_and_piece(char ***map, char *line, char ***piece)
 {
-	int		ret;
+	int			ret;
 
 	if ((ret = pars_and_fill_line(&line, map, piece)) == -1)
 		return (-1);
