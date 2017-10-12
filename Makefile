@@ -25,7 +25,8 @@ SRCS		=		$(DIR_SRC)main.c					\
 					$(DIR_SRC)pos_func.c				\
 					$(DIR_SRC)stick_piece.c				\
 					$(DIR_SRC)rush.c					\
-					$(DIR_SRC)pos_near.c				\
+					$(DIR_SRC)find_pos_near.c			\
+					$(DIR_SRC)trace.c					\
 					$(DIR_SRC)tools.c					\
 
 OBJS		=		$(SRCS:.c=.o)

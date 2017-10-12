@@ -21,6 +21,10 @@ typedef struct	s_data_map
 {
 	int			last_pos[2];
 	int			first_pos[2];
+	int			pos_sch[2];
+	int			save[2];
+	int			ret[2];
+	int			pos[2];
 }				t_dm;
 
 //Just for dip in file check;
@@ -45,11 +49,17 @@ void			find_first_pos(char **map, t_dm *dm, int player);
 int				stick_piece_in_map(char **map, char **piece,
 									int pos[2], int player);
 
-int				find_pos_near(char **map, t_dm *dm, int player, int *pos);
+int				find_pos_near(char **map, t_dm *dm, int player);
 
 int				duplicate_new_line(char *line, char **free_that);
 int				skip_nbr(char *line);
 int				fill_nb(char *line, int nb_search);
 int				push_line(char ***tab, char *line);
+int				cpy_tab(int *dest, int *src);
+
+int				trace_column_top(char **map, t_dm *dm, int near, char find);
+int				trace_column_bot(char **map, t_dm *dm, int near, char find);
+int				trace_line_right(char **map, t_dm *dm, int near, char find);
+int				trace_line_left(char **map, t_dm *dm, int near, char find);
 
 #endif

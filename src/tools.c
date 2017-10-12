@@ -13,6 +13,13 @@
 #include "libft.h"
 #include <stdlib.h>
 
+int			cpy_tab(int *dest, int *src)
+{
+	dest[0] = src[0];
+	dest[1] = src[1];
+	return (1);
+}
+
 int			push_line(char ***tab, char *line)
 {
 	int		i;
