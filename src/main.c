@@ -77,7 +77,7 @@ int			main(void)
 	int		player;
 
 	//Just for dip in file check;
-	if ((fd_g = open("check",O_RDWR | O_CREAT)) == -1)
+	if ((fd_g = open("check",O_RDWR | O_CREAT, S_IRWXU)) == -1)
 		return (-1);
 	//Just for dip in file check;
 	if ((player = fill_player()) == -1)

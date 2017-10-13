@@ -6,7 +6,7 @@
 #    By: yguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 11:38:09 by yguzman           #+#    #+#              #
-#    Updated: 2017/10/10 15:01:19 by yguzman          ###   ########.fr        #
+#    Updated: 2017/10/13 16:36:04 by yguzman          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,8 +25,6 @@ SRCS		=		$(DIR_SRC)main.c					\
 					$(DIR_SRC)pos_func.c				\
 					$(DIR_SRC)stick_piece.c				\
 					$(DIR_SRC)rush.c					\
-					$(DIR_SRC)find_pos_near.c			\
-					$(DIR_SRC)trace.c					\
 					$(DIR_SRC)tools.c					\
 
 OBJS		=		$(SRCS:.c=.o)

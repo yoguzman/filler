@@ -11,10 +11,10 @@ int			stick_piece_in_map(char **map, char **piece,
 	i = 0;
 	count = 0;
 	xy[0] = pos[0];
+	if (xy[0] > ft_tablen(map) - 1 || xy[1] > (int)ft_strlen(map[0]) -1)
+		return (-1);
 	while (piece[i])
 	{
-		if (map[xy[0]] == NULL)
-			return (-1);
 		j = 0;
 		xy[1] = pos[1];
 		while (piece[i][j])
