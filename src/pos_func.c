@@ -32,12 +32,13 @@ void		find_first_pos(char **map, t_dm *dm, int player)
 	}
 }
 
-void		put_pos(int pos[2], t_dm *dm)
+void		put_pos(int pos[2], t_dm *dm, char **piece, char find)
 {
 	ft_putnbr(pos[0]);
 	ft_putchar(' ');
 	ft_putnbr(pos[1]);
 	ft_putchar('\n');
+	find_better_pos(piece, pos, dm, find);
 	dm->last_pos[0] = pos[0];
 	dm->last_pos[1] = pos[1];
 }

@@ -26,7 +26,8 @@ void		disp_tab_fd(char **tab)
 		ft_putstr_fd(tab[i], fd_g);
 		ft_putstr_fd("\n", fd_g);
 		++i;
-	} }
+	} 
+}
 
 void		disp_all(char **map, char **piece, t_dm *dm)
 {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   brut_force.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/16 13:08:22 by yguzman           #+#    #+#             */
+/*   Updated: 2017/10/16 15:52:53 by yguzman          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "filler.h"
 
@@ -19,6 +31,6 @@ int			brut_force_all(char **map, char **piece, int player, t_dm *dm)
 		if (pos[0] > ft_tablen(map) -1)
 			return (1);
 	}
-	put_pos(pos, dm);
+	put_pos(pos, dm, piece, '*');
 	return (0);
 }
