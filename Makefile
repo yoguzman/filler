@@ -6,7 +6,7 @@
 #    By: yguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 11:38:09 by yguzman           #+#    #+#              #
-#    Updated: 2017/10/16 16:57:33 by yguzman          ###   ########.fr        #
+#    Updated: 2017/10/17 11:15:14 by yguzman          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -19,16 +19,11 @@ DIR_SRC		=		./src/
 SRCS		=		$(DIR_SRC)main.c					\
 					$(DIR_SRC)free.c					\
 					$(DIR_SRC)go_algo.c					\
-					$(DIR_SRC)try_all_pos.c				\
-					$(DIR_SRC)find_better_pos.c			\
 					$(DIR_SRC)fill_map_and_piece.c		\
 					$(DIR_SRC)fill_player.c				\
 					$(DIR_SRC)brut_force.c				\
 					$(DIR_SRC)pos_func.c				\
 					$(DIR_SRC)stick_piece.c				\
-					$(DIR_SRC)check_line.c				\
-					$(DIR_SRC)direction.c				\
-					$(DIR_SRC)rush.c					\
 					$(DIR_SRC)tools.c					\
 
 OBJS		=		$(SRCS:.c=.o)

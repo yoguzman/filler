@@ -6,7 +6,7 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 15:44:23 by yguzman           #+#    #+#             */
-/*   Updated: 2017/10/09 15:44:24 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/10/17 14:30:17 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int			push_line(char ***tab, char *line)
 	i = 0;
 	while ((*tab)[i] && (*tab)[i][0] != 0)
 		++i;
-   	(*tab)[i] = line;
+	(*tab)[i] = line;
 	if ((*tab)[i + 1] == NULL)
 		return (1);
 	return (0);

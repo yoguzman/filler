@@ -6,32 +6,27 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 15:44:08 by yguzman           #+#    #+#             */
-/*   Updated: 2017/10/16 21:09:12 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/10/17 15:19:32 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLER_H_
-# define FILLER_H_
-//Just for dip in file check;
-int			fd_g;
-void		disp_tab_fd(char **tab);
-//Just for dip in file check;
+#ifndef FILLER_H
+# define FILLER_H
 
 typedef struct	s_data_map
 {
 	int			last_pos[2];
 	int			first_pos[2];
-	int			save[2];
-	int			ret[2];
-	int			pos[2];
-	int			pos_go[2];
-	int			save_for_remove[2];
-	int			end;
+	int			c_ma_direction;
 }				t_dm;
 
-//Just for dip in file check;
-void		disp_all(char **tab, char **piece, t_dm *dm);
-//Just for dip in file check;
+typedef struct	s_data_stick
+{
+	char		**map;
+	char		**piece;
+	int			player;
+	int			count;
+}				t_ds;
 
 void			init_dm(t_dm *dm);
 
@@ -40,13 +35,12 @@ void			free_map_and_piece(char **map, char **piece);
 int				fill_map_and_piece(char ***map, char *line, char ***piece);
 int				fill_player(void);
 
-
 int				brut_force_all(char **map, char **piece, int player, t_dm *dm);
 int				rush(char **map, char **piece, int player, t_dm *dm);
 int				go_algo(char **map, char **piece, int player, t_dm *dm);
 
-void			put_pos(int pos[2], t_dm *dm, char **piece, char find);
-void			find_first_pos(char **map, t_dm *dm, int player);
+void			put_pos(int pos[2], t_dm *dm);
+int				find_first_pos(char **map, t_dm *dm, int player);
 
 int				stick_piece_in_map(char **map, char **piece,
 									int pos[2], int player);
@@ -57,14 +51,13 @@ int				fill_nb(char *line, int nb_search);
 int				push_line(char ***tab, char *line);
 int				cpy_tab(int *dest, int *src);
 
-int				try_all_position(t_dm *dm, char **piece);
-
-void			find_better_pos(char **piece, int pos[2], t_dm *dm, char find);
-
-int				line_left(char **map, t_dm *dm, char find, char **piece);
-int				line_right(char **map, t_dm *dm, char find, char **piece);
-int				column_top(char **map, t_dm *dm, char find, char **piece);
-int				column_bot(char **map, t_dm *dm, char find, char **piece);
-int				find_dir(char **map, int player, t_dm *dm, char **piece);
+int				brut_force_up_left(char **map, char **piece,
+									int player, t_dm *dm);
+int				brut_force_up_right(char **map, char **piece,
+									int player, t_dm *dm);
+int				brut_force_down_left(char **map, char **piece,
+								int player, t_dm *dm);
+int				brut_force_down_right(char **map, char **piece,
+								int player, t_dm *dm);
 
 #endif

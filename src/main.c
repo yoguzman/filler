@@ -4,41 +4,15 @@
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */ /*   Created: 2017/10/09 15:44:15 by yguzman           #+#    #+#             */
-/*   Updated: 2017/10/10 14:13:42 by yguzman          ###   ########.fr       */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/17 14:29:47 by yguzman           #+#    #+#             */
+/*   Updated: 2017/10/17 14:29:48 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "filler.h"
 #include <stdlib.h>
-//Just for dip in file check;
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-void		disp_tab_fd(char **tab)
-{
-	int		i;
-
-	i = 0;
-	while (tab[i])
-	{
-		ft_putstr_fd(tab[i], fd_g);
-		ft_putstr_fd("\n", fd_g);
-		++i;
-	} 
-}
-
-void		disp_all(char **map, char **piece, t_dm *dm)
-{
-	ft_putnbr_fd(dm->last_pos[0], fd_g);
-	ft_putchar_fd(' ', fd_g);
-	ft_putnbr_fd(dm->last_pos[1], fd_g);
-	ft_putchar_fd('\n', fd_g);
-	disp_tab_fd(map);
-	disp_tab_fd(piece);
-}
-//Just for dip in file check;
 
 void		init_dm(t_dm *dm)
 {
@@ -77,10 +51,6 @@ int			main(void)
 {
 	int		player;
 
-	//Just for dip in file check;
-	if ((fd_g = open("check",O_RDWR | O_CREAT, S_IRWXU)) == -1)
-		return (-1);
-	//Just for dip in file check;
 	if ((player = fill_player()) == -1)
 		return (-1);
 	if (loop_filler(player) == -1)

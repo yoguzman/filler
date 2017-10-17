@@ -6,7 +6,7 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 15:44:40 by yguzman           #+#    #+#             */
-/*   Updated: 2017/10/10 10:55:59 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/10/17 14:34:21 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int			modif_line(char **line)
 	return (0);
 }
 
-
 int			malloc_map_or_piece(char ***tab, int line_x,
 								int column_y, char *line)
 {
@@ -54,10 +53,10 @@ int			malloc_map_or_piece(char ***tab, int line_x,
 
 int			pars_and_fill_line(char **line, char ***map, char ***piece)
 {
-	if (ft_strncmp(*line , "Plateau", 7) == 0)
+	if (ft_strncmp(*line, "Plateau", 7) == 0)
 		return (malloc_map_or_piece(map, fill_nb(*line, 1),
 									fill_nb(*line, 2), *line));
-	else if (ft_strncmp(*line , "Piece", 5) == 0)
+	else if (ft_strncmp(*line, "Piece", 5) == 0)
 		return (malloc_map_or_piece(piece, fill_nb(*line, 1),
 									fill_nb(*line, 2), *line));
 	else if ((*line)[0] == ' ')
@@ -67,9 +66,9 @@ int			pars_and_fill_line(char **line, char ***map, char ***piece)
 	return (0);
 }
 
-int				fill_map_and_piece(char ***map, char *line, char ***piece)
+int			fill_map_and_piece(char ***map, char *line, char ***piece)
 {
-	int			ret;
+	int		ret;
 
 	if ((ret = pars_and_fill_line(&line, map, piece)) == -1)
 		return (-1);

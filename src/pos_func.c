@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pos_func.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/17 14:32:13 by yguzman           #+#    #+#             */
+/*   Updated: 2017/10/17 14:32:14 by yguzman          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "filler.h"
 #include "libft.h"
 
@@ -7,7 +19,7 @@ void		fill_pos(int pos[2], int x, int y)
 	pos[1] = y;
 }
 
-void		find_first_pos(char **map, t_dm *dm, int player)
+int			find_first_pos(char **map, t_dm *dm, int player)
 {
 	int		i;
 	int		j;
@@ -30,15 +42,21 @@ void		find_first_pos(char **map, t_dm *dm, int player)
 		}
 		++i;
 	}
+	return (dm->first_pos[0] < dm->last_pos[0] ? 1 : 0);
 }
 
-void		put_pos(int pos[2], t_dm *dm, char **piece, char find)
+void		put_pos(int pos[2], t_dm *dm)
 {
 	ft_putnbr(pos[0]);
 	ft_putchar(' ');
 	ft_putnbr(pos[1]);
 	ft_putchar('\n');
-	find_better_pos(piece, pos, dm, find);
-	dm->last_pos[0] = pos[0];
-	dm->last_pos[1] = pos[1];
+	if (dm->c_ma_direction == 0)
+		dm->c_ma_direction = 2;
+	else if (dm->c_ma_direction == 1)
+		dm->c_ma_direction = 3;
+	else if (dm->c_ma_direction == 2)
+		dm->c_ma_direction = 0;
+	else if (dm->c_ma_direction == 3)
+		dm->c_ma_direction = 1;
 }
