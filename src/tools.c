@@ -27,6 +27,7 @@ int			push_line(char ***tab, char *line)
 	i = 0;
 	while ((*tab)[i] && (*tab)[i][0] != 0)
 		++i;
+	free((*tab)[i]);
 	(*tab)[i] = line;
 	if ((*tab)[i + 1] == NULL)
 		return (1);
@@ -46,28 +47,22 @@ int			duplicate_new_line(char *line, char **free_that)
 
 int			fill_nb(char *line, int nb_search)
 {
-	int		j;
-	char	cpy;
+	int		i;
 	int		nb;
 
-	j = 0;
-	while (j != nb_search)
+	i = 0;
+	while (line[i] && !ft_isdigit(line[i]))
+		++i;
+	if (nb_search == 1)
+		nb = ft_atoi(line + i);
+	else
 	{
-		while (*line && !ft_isdigit(*line))
-			++line;
-		++j;
-		if (j == nb_search)
-			break ;
-		while (*line && ft_isdigit(*line))
-			++line;
-	}
-	j = 0;
-	while (line[j] && ft_isdigit(line[j]))
-		++j;
-	cpy = line[j];
-	line[j] = 0;
-	nb = ft_atoi(line);
-	line[j] = cpy;
+		while (line[i] && ft_isdigit(line[i]))
+			++i;
+		while (line[i] && !ft_isdigit(line[i]))
+			++i;
+		nb = ft_atoi(line + i);
+	}	
 	return (nb);
 }
 

@@ -17,7 +17,7 @@
 int			modif_line(char **line)
 {
 	if (ft_isdigit((*line)[0]))
-	{
+	{	
 		if (duplicate_new_line(*line + skip_nbr(*line), line) == -1)
 			return (-1);
 		return (1);

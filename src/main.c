@@ -55,5 +55,6 @@ int			main(void)
 		return (-1);
 	if (loop_filler(player) == -1)
 		return (-1);
+	while (1);
 	return (0);
 }

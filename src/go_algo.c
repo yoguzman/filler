@@ -29,11 +29,8 @@ int			go_algo(char **map, char **piece, int player, t_dm *dm)
 		ret = brut_force_up_left(map, piece, player, dm);
 	else if (dm->c_ma_direction == 2)
 		ret = brut_force_down_right(map, piece, player, dm);
-	if (ret == 1)
-	{
-		free_map_and_piece(map, piece);
-		return (1);
-	}
 	free_map_and_piece(map, piece);
+	if (ret == 1)
+		return (1);
 	return (0);
 }

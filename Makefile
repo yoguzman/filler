@@ -12,7 +12,7 @@
 
 CC			=		clang
 
-NAME		=		./resources/players/yguzman.filler
+NAME		=		yguzman.filler
 
 DIR_SRC		=		./src/
 
@@ -29,7 +29,7 @@ SRCS		=		$(DIR_SRC)main.c					\
 OBJS		=		$(SRCS:.c=.o)
 
 CFLAGS		+=		-Iinclude
-CFLAGS		+=		-Wall -Wextra
+CFLAGS		+=		-Wall -Wextra -g -g3 
 
 RM			=		rm -f
 
