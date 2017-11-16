@@ -6,7 +6,7 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 14:29:47 by yguzman           #+#    #+#             */
-/*   Updated: 2017/10/17 14:29:48 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/11/16 14:47:51 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,5 @@ int			main(void)
 		return (-1);
 	if (loop_filler(player) == -1)
 		return (-1);
-	while (1);
 	return (0);
 }

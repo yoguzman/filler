@@ -6,7 +6,7 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/16 13:08:22 by yguzman           #+#    #+#             */
-/*   Updated: 2017/10/17 14:32:06 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/11/16 15:59:56 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int			brut_force_down_left(char **map, char **piece, int player, t_dm *dm)
 	{
 		if (pos[1] == (int)(ft_strlen(map[0]) - 1))
 		{
-			pos[1] = 0 - (int)ft_strlen(piece[0] - 1);
+			pos[1] = 0 - (int)ft_strlen(piece[0]) - 1;
 			pos[0] -= 1;
 		}
 		else
@@ -90,7 +90,7 @@ int			brut_force_up_left(char **map, char **piece, int player, t_dm *dm)
 	{
 		if (pos[1] == (int)(ft_strlen(map[0]) - 1))
 		{
-			pos[1] = 0 - (int)ft_strlen(piece[0] - 1);
+			pos[1] = 0 - (int)ft_strlen(piece[0]) - 1;
 			pos[0] += 1;
 		}
 		else

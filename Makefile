@@ -6,7 +6,7 @@
 #    By: yguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 11:38:09 by yguzman           #+#    #+#              #
-#    Updated: 2017/10/17 11:15:14 by yguzman          ###   ########.fr        #
+#    Updated: 2017/11/16 16:01:19 by yguzman          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -29,7 +29,7 @@ SRCS		=		$(DIR_SRC)main.c					\
 OBJS		=		$(SRCS:.c=.o)
 
 CFLAGS		+=		-Iinclude
-CFLAGS		+=		-Wall -Wextra -g -g3 
+CFLAGS		+=		-Wall -Wextra -Werror
 
 RM			=		rm -f
 
@@ -66,15 +66,4 @@ fclean		:		fclean_lib
 
 re			:		fclean all
 
-depend		:		$(SRCS)
-					@makedepend -- -Yinclude/ -- $^ 2> /dev/null
-
 .PHONY		:		all depend clean flean re
-
-# DO NOT DELETE THIS LINE -- make depend depends on it.
-
-src/main.o: include/libft.h include/filler.h
-src/go_algo.o: include/filler.h include/libft.h
-src/fill_map_and_piece.o: include/libft.h include/filler.h
-src/fill_player.o: include/libft.h include/filler.h
-src/tools.o: include/libft.h
